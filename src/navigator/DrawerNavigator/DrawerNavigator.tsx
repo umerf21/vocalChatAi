@@ -6,7 +6,12 @@ import {
 } from '@react-navigation/drawer';
 import {View, Text} from 'react-native';
 import {ROOT_PAGE_URL} from '../navigation.types';
-import {HomeScreen, SettingsScreen, SubscriptionScreen} from '../../screens';
+import {
+  ChatScreen,
+  HomeScreen,
+  SettingsScreen,
+  SubscriptionScreen,
+} from '../../screens';
 import {DrawerScreenOptions} from '../navigation.config';
 type Props = {};
 
@@ -36,6 +41,7 @@ const DrawerNavigator = (props: Props) => {
       drawerContent={props => <CustomDrawerContent {...props} />}>
       <Drawer.Screen name={ROOT_PAGE_URL.Home} component={HomeScreen} />
       <Drawer.Screen name={ROOT_PAGE_URL.Settings} component={SettingsScreen} />
+      <Drawer.Screen name={ROOT_PAGE_URL.Chat} component={ChatScreen} />
       <Drawer.Screen
         name={ROOT_PAGE_URL.Subscription}
         component={SubscriptionScreen}

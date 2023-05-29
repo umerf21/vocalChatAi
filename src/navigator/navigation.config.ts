@@ -29,6 +29,7 @@ export const DrawerScreenOptions: DrawerNavigationOptions = {
   headerTitleStyle: {
     color: Colors.white,
   },
+  headerLeft: () => '',
   // headerStyle: {
   //   shadowColor: '#000',
   //   shadowOffset: {

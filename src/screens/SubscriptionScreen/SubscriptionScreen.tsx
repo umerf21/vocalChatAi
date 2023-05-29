@@ -1,4 +1,5 @@
 import {View, Text, Image, ScrollView} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 import {
   AppButton,
   BGContainer,
@@ -10,6 +11,7 @@ import styles from './SubscritionScreen.styles';
 import {useState} from 'react';
 import SubscriptionCard from './RenderItems/SubscriptionCard';
 import {BUTTON_TYPE} from '../../shared/constants';
+import {ROOT_PAGE_URL} from '../../navigator/navigation.types';
 type Props = {};
 const SubscriptionScreen = (props: Props) => {
   const packagesData = [
@@ -24,11 +26,18 @@ const SubscriptionScreen = (props: Props) => {
     'No commitment, Cancel anytime',
   ];
 
+  const nav = useNavigation();
+
   const [selected, setselected] = useState<{
     duration: number;
     price: number | undefined;
   }>();
 
+  const onSelectPackage = () => {
+    if (selected !== undefined) {
+      nav.navigate(ROOT_PAGE_URL.Chat);
+    }
+  };
   const renderCheckText = (text: string) => {
     return (
       <View
@@ -81,7 +90,7 @@ const SubscriptionScreen = (props: Props) => {
               ? `Get ${selected.duration} months / ${selected.price} aed`
               : 'Select Package'
           }
-          onPress={() => {}}
+          onPress={onSelectPackage}
           type={BUTTON_TYPE.PRIMARY}
         />
         <View

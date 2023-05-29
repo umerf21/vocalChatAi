@@ -17,8 +17,6 @@ const SubscriptionCard = ({
 }: ISubscriptionCardProps) => {
   const {duration, price} = item;
 
-  console.log(selected, item, selected == item);
-
   const isSelected = selected?.duration == item?.duration ?? false;
 
   const selectedColor = isSelected ? Colors.secondary : Colors.dark;

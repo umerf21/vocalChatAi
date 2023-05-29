@@ -11,6 +11,7 @@ export type RootStackParamList = {
   Home: undefined;
   Menu: undefined;
   Main: undefined;
+  Chat: undefined;
   Settings: undefined;
   Subscription: undefined;
 };
@@ -30,6 +31,7 @@ export const ROOT_PAGE_URL: RootPageUrlType = {
   Home: 'Home',
   Menu: 'Menu',
   Main: 'Main',
+  Chat: ' Chat',
   Settings: 'Settings',
   Subscription: 'Subscription',
 };
